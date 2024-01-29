@@ -162,7 +162,11 @@ class Tile:
 
 
 # %%
-test_tile = Tile(45808, 105812, 18)
+    
+# Zoom level when fetching initial tile coords have to
+# match zoom level when creating new Tile object
+tile_coord = fromLatLngToTileCoord(32.7439375, -117.0935763, zoom=18)
+test_tile = Tile(tile_coord["x"], tile_coord["y"], zoom=18)
 display_tile(test_tile.get_image())
 
 
